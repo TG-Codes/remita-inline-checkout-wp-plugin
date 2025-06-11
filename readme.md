@@ -1,16 +1,10 @@
----
-
-```markdown
 # Remita Inline Checkout WP Plugin
 
 This WordPress plugin integrates Remita Inline Checkout into your website, allowing users to make payments securely using Remita. It features a settings page for easy configuration of your Remita credentials and automatic RRR generation.
 
----
-
 ## 📂 Plugin Structure
 
 ```
-
 remita-inline-checkout-wp-plugin/
 │
 ├── remita-inline-checkout-wp-plugin.php
@@ -25,11 +19,8 @@ remita-inline-checkout-wp-plugin/
 │   └── checkout-form.php
 │
 └── assets/
-└── remita-pay-inline.bundle.js
-
+    └── remita-pay-inline.bundle.js
 ```
-
----
 
 ## 🚀 Installation
 
@@ -38,14 +29,10 @@ remita-inline-checkout-wp-plugin/
 3. Navigate to **Settings > Remita Inline Settings** in the WordPress admin to configure your Remita credentials.
 4. Use the shortcode `[remita_checkout]` in any page or post where you want the Remita checkout form to appear.
 
----
-
 ## 🔑 Usage
 
 - This plugin dynamically generates RRRs using the Remita Invoice API and displays the Remita Inline Payment widget.
 - Use the `[remita_checkout]` shortcode to embed the payment form anywhere on your site.
-
----
 
 ## 🛠️ Configuration
 
@@ -58,25 +45,18 @@ remita-inline-checkout-wp-plugin/
 - Save your settings to enable payment processing.
 - No need to manually edit the code or templates.
 
----
-
 ## ⚠️ Notes
 
 - The plugin automatically generates RRRs and handles payments end-to-end.
 - Ensure your Remita credentials are valid and tested in the **Remita demo environment** before going live.
----
 
 ## 📞 Support
 
-For issues or questions, please contact your developer or refer to Remita’s official API documentation.
-
----
+For issues or questions, please contact your developer or refer to Remita's official API documentation.
 
 ## 📝 License
 
 This plugin is provided as-is, without warranty of any kind.
-
----
 
 **Enjoy! 🚀**
 ```
