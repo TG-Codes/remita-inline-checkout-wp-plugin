@@ -42,7 +42,11 @@ function remita_generate_rrr() {
     }
 
     $orderId = uniqid();
-    $url = "https://remitademo.net/remita/exapp/api/v1/send/api/echannelsvc/merchant/api/paymentinit";
+    
+    // Set base URL based on environment
+    $is_demo = get_option('remita_is_demo', true);
+    $base_url = $is_demo ? 'https://remitademo.net' : 'https://login.remita.net';
+    $url = $base_url . "/remita/exapp/api/v1/send/api/echannelsvc/merchant/api/paymentinit";
 
     $payload = array(
         'merchantId' => $merchantId,

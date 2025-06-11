@@ -32,14 +32,17 @@ function remita_plugin_settings() {
     register_setting('remita_plugin_options_group', 'remita_api_key');
     register_setting('remita_plugin_options_group', 'remita_api_token');
     register_setting('remita_plugin_options_group', 'remita_public_key');
+    register_setting('remita_plugin_options_group', 'remita_is_demo');
 
     add_settings_section('remita_plugin_section', 'Remita Credentials', null, 'remita_plugin');
+    add_settings_section('remita_environment_section', 'Environment Settings', null, 'remita_plugin');
 
     add_settings_field('remita_merchant_id', 'Merchant ID', 'remita_merchant_id_field', 'remita_plugin', 'remita_plugin_section');
     add_settings_field('remita_service_type_id', 'Service Type ID', 'remita_service_type_id_field', 'remita_plugin', 'remita_plugin_section');
     add_settings_field('remita_api_key', 'API Key', 'remita_api_key_field', 'remita_plugin', 'remita_plugin_section');
     add_settings_field('remita_api_token', 'API Token', 'remita_api_token_field', 'remita_plugin', 'remita_plugin_section');
     add_settings_field('remita_public_key', 'Public Key', 'remita_public_key_field', 'remita_plugin', 'remita_plugin_section');
+    add_settings_field('remita_is_demo', 'Environment', 'remita_is_demo_field', 'remita_plugin', 'remita_environment_section');
 }
 
 function remita_merchant_id_field() {
@@ -61,5 +64,16 @@ function remita_api_token_field() {
 function remita_public_key_field() {
     $value = esc_attr(get_option('remita_public_key'));
     echo '<input type="text" name="remita_public_key" value="' . $value . '" class="regular-text">';
+}
+
+function remita_is_demo_field() {
+    $value = get_option('remita_is_demo', true);
+    ?>
+    <select name="remita_is_demo">
+        <option value="1" <?php selected($value, true); ?>>Demo Environment</option>
+        <option value="0" <?php selected($value, false); ?>>Production Environment</option>
+    </select>
+    <p class="description">Use Demo Environment for testing. Switch to Production only when going live.</p>
+    <?php
 }
 ?>
